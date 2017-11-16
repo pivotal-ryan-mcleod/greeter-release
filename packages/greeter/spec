@@ -1,0 +1,8 @@
+---
+name: greeter
+
+dependencies:
+- jdk
+
+files:
+- greeter/**/*

@@ -1,0 +1,7 @@
+set -e -x
+
+cd greeter
+
+JAVA_HOME=/var/vcap/packages/jdk/jdk1.8.0_151 ./gradlew assemble
+
+cp build/libs/greeter.jar ${BOSH_INSTALL_TARGET}

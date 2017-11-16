@@ -1,0 +1,14 @@
+---
+name: web_api
+
+templates:
+  ctl.erb: bin/ctl
+
+packages:
+- greeter
+- jdk
+
+properties: 
+  web_api.port:
+    description: Port that web_api listens on
+    default: 80

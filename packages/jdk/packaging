@@ -1,0 +1,21 @@
+set -e -x
+
+if [[ `uname -a` =~ "x86_64" ]] ; then
+  archive="jdk/jdk-8u151-linux-x64.tar.gz"
+  echo "Using 64-bit version"
+else
+  echo "Only 64-bit architectures are supported."
+  exit 1
+fi
+
+if [[ -f $archive ]] ; then
+  echo "Archive found"
+else
+  echo "Archive not found"
+  exit 1
+fi
+
+echo "Extracting archive..."
+tar xzf $archive
+
+cp -a * ${BOSH_INSTALL_TARGET}
